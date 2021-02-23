@@ -10,7 +10,7 @@ const CreatePostForm = ({ handleAddBlog }) => {
     title: '',
     author: '',
     url: ''
-  }
+  };
   const [currentBlog, setCurrentBlog] = useState(initialBlogState);
 
   const handleTitleChange = ({ target }) =>
@@ -27,7 +27,7 @@ const CreatePostForm = ({ handleAddBlog }) => {
 
     handleAddBlog(currentBlog);
     setCurrentBlog(initialBlogState);
-  }
+  };
 
   return (
     <form onSubmit={addBlog}>
@@ -61,7 +61,7 @@ const CreatePostForm = ({ handleAddBlog }) => {
       <button>create</button>
     </form>
   );
-}
+};
 
 
 export default CreatePostForm;

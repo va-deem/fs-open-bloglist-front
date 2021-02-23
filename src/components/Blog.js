@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 const Blog = ({ blog, handleAddLike, handleDelete, user }) => {
   Blog.propTypes = {
     blog: PropTypes.object.isRequired,
-    handleAddLike: PropTypes.func.isRequired,
-    handleDelete: PropTypes.func.isRequired,
-    user: PropTypes.object
+    handleAddLike: PropTypes.func,
+    handleDelete: PropTypes.func,
+    user: PropTypes.object,
   };
 
   const blogStyle = {
@@ -25,12 +25,12 @@ const Blog = ({ blog, handleAddLike, handleDelete, user }) => {
   };
 
   return (
-    <div style={blogStyle}>
-      {blog.title}
+    <div style={blogStyle} className='blog'>
+      {blog.title} {blog.author}
       <button onClick={toggleVisibility}>
         {blogVisible ? 'hide' : 'view'}
       </button>
-      <div style={showWhenVisible}>
+      <div style={showWhenVisible} className='drop-section'>
         <p>{blog.url}</p>
         <p>{blog.likes}
           <button onClick={() => handleAddLike(blog.id)}>like</button>
