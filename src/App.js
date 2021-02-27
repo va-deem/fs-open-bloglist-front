@@ -145,6 +145,7 @@ const App = () => {
               type="text"
               value={username}
               name="Username"
+              id="username"
               onChange={({ target }) => setUsername(target.value)}
             />
           </div>
@@ -154,6 +155,7 @@ const App = () => {
               type="password"
               value={password}
               name="Password"
+              id="password"
               onChange={({ target }) => setPassword(target.value)}
             />
           </div>
@@ -167,7 +169,7 @@ const App = () => {
     <div>
       <Notification notification={notification} />
       <h2>blogs</h2>
-      <p>{user.name} logged-in</p>
+      <p>{user.name} logged-in {user.id}</p>
       <button onClick={handleLogout}>logout</button>
       <Togglable buttonLabel="new blog" ref={blogFormRef}>
         <CreatePostForm handleAddBlog={handleAddBlog} />

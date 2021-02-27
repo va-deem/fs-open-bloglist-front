@@ -32,11 +32,12 @@ const Blog = ({ blog, handleAddLike, handleDelete, user }) => {
       </button>
       <div style={showWhenVisible} className='drop-section'>
         <p>{blog.url}</p>
-        <p>{blog.likes}
+        <p>
+          <span className="likes-number">{blog.likes}</span>
           <button onClick={() => handleAddLike(blog.id)}>like</button>
         </p>
         <p>{blog.author}</p>
-        {blog.user === user.id ? (<p>
+        {blog.user && blog.user.username === user.username ? (<p>
           <button onClick={() => handleDelete(blog.id)}>remove</button>
         </p>) : ''}
       </div>
